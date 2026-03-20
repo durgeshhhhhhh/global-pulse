@@ -147,6 +147,63 @@ npm run report
 | GET | `/api/prices` | Historical price records from SQLite |
 | GET | `/api/news` | Latest headlines from MongoDB |
 
+## Querying the API
+
+Make sure both terminals are running before querying.
+
+### Get Latest Pulse Report (Price + News combined)
+
+```bash
+curl http://localhost:3000/api/pulse
+```
+
+### Get Pulse Report by RunId
+
+```bash
+curl http://localhost:3000/api/pulse/:runId
+```
+
+### Get Historical Price Records
+
+```bash
+# Default returns 10 records
+curl http://localhost:3000/api/prices
+# Custom limit
+curl http://localhost:3000/api/prices?limit=20
+```
+
+### Get Latest News Headlines
+
+```bash
+curl http://localhost:3000/api/news
+```
+
+### Example Response — `/api/pulse`
+
+```json
+{
+  "success": true,
+  "count": 5,
+  "data": [
+    {
+      "runId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "asset": "BTC",
+      "price": 70260,
+      "currency": "USD",
+      "timestamp": "2026-03-20T12:45:00.000Z",
+      "news": [
+        {
+          "title": "Bitcoin jumps to $70,800 as oil retreats",
+          "url": "https://coindesk.com/...",
+          "source": "CoinDesk",
+          "publishedAt": "2026-03-20T11:13:00.000Z"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Tech Stack
 
 | Technology | Purpose |
