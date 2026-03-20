@@ -5,9 +5,9 @@ with **financial news headlines** (Soft Data) into a unified, queryable system.
 
 ## System Architecture
 
-\```
+```
 ┌─────────────────────────────────────────────┐
-│              INGESTION LAYER                 │
+│              INGESTION LAYER                │
 │                                             │
 │  CoinGecko API        CoinDesk RSS Feed     │
 │  (BTC Price)          (News Headlines)      │
@@ -35,7 +35,7 @@ with **financial news headlines** (Soft Data) into a unified, queryable system.
 │  Express API          CLI Report            │
 │  /api/pulse           npm run report        │
 └─────────────────────────────────────────────┘
-\```
+```
 
 ## Database Design Decisions
 
@@ -65,7 +65,7 @@ This lets you query:
 
 ## Project Structure
 
-\```
+```
 global-pulse/
 ├── src/
 │   ├── config/
@@ -86,7 +86,7 @@ global-pulse/
 ├── config.js                  # Central configuration
 ├── .env.example
 └── package.json
-\```
+```
 
 ## Setup & Installation
 
@@ -95,48 +95,48 @@ global-pulse/
 - MongoDB Atlas account (free tier)
 
 ### 1. Clone the repository
-\```bash
+```bash
 git clone https://github.com/durgeshhhhhhhh/global-pulse.git
 cd global-pulse
-\```
+```
 
 ### 2. Install dependencies
-\```bash
+```bash
 npm install
-\```
+```
 
 ### 3. Configure environment
-\```bash
+```bash
 cp .env.example .env
-\```
+```
 Fill in your MongoDB Atlas connection string in `.env`:
-\```
+```
 MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/global_pulse
 PORT=3000
-\```
+```
 
 ### 4. Create data directory
-\```bash
+```bash
 mkdir data
-\```
+```
 
 ## Running the System
 
 ### Terminal 1 — Start the data pipeline
 Fetches BTC price + news every 5 minutes:
-\```bash
+```bash
 npm run pipeline
-\```
+```
 
 ### Terminal 2 — Start the API server
-\```bash
+```bash
 npm start
-\```
+```
 
 ### Generate CLI Pulse Report (any terminal)
-\```bash
+```bash
 npm run report
-\```
+```
 
 ## API Endpoints
 
