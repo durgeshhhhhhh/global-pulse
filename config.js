@@ -11,3 +11,5 @@ export const newsSource = {
 };
 
 export const maxHeadlines = 3;
+
+export const sqlDbPath = "./data/prices.db";
