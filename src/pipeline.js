@@ -1,7 +1,7 @@
 // src/pipeline.js
 import cron from "node-cron";
 import { fetchPrice } from "./ingestion/priceFetcher.js";
-import { scrapeHeadlines } from "./ingestion/newsScraper.js";
+import { scrapeHeadlines } from "./ingestion/newsScrapper.js";
 import { initSqlDb, insertPrice } from "./storage/sqlStore.js";
 import { insertHeadlines } from "./storage/noSqlStore.js";
 import { connectDB } from "./config/database.js";

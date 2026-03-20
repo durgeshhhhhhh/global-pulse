@@ -13,7 +13,7 @@ const newsHeadlineSchema = new mongoose.Schema({
     type: String,
   },
   source: {
-    type: string,
+    type: String,
   },
   publishedAt: {
     type: Date,

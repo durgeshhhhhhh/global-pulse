@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "pipeline": "node src/pipeline.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "report": "node src/pulseReport.js"
   },
   "keywords": [],
   "author": "",

@@ -1,13 +1,13 @@
 import "dotenv/config";
 import express from "express";
 import { connectDB } from "./src/config/database.js";
-// import { pulseRouter } from "./src/routes/pulseRoutes.js";
+import { pulseRouter } from "./src/routes/pulseRoutes.js";
 
 const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
-// app.use("/api", pulseRouter);
+app.use("/api", pulseRouter);
 
 connectDB()
   .then(() => {
